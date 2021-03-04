@@ -5,6 +5,8 @@
 
 `yarn install`
 
+`yarn add bootstrap jquery popper.js`
+
 `rails db:create`
 
 `rails db:migrate`
