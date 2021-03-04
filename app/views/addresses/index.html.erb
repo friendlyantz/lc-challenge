@@ -19,9 +19,9 @@
     <% @addresses.each do |address| %>
       <tr>
         <td><%= address.feature_id %></td>
-        <td><%= address.property_id %></td>
+        <td><%= address.property.lc_id %> <%= link_to "go to this Property", property_path(address.property_id) %></td>
         <td><%= address.full_address %></td>
-        <td><%= address.lgasfile_id %></td>
+        <td><%= link_to address.lgasfile.code, property_path(address.property_id) %></td>
         <td><%= address.state %></td>
         <td><%= address.postcode %></td>
         <td><%= link_to 'Show', address %></td>
