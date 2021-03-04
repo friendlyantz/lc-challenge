@@ -23,6 +23,14 @@ class AddressesController < ApplicationController
   def create
     @address = Address.new(address_params)
 
+    @markers = @address.geocoded.map do |address|
+      {
+        lat: address.latitude,
+        lng: address.longitude
+      }
+    end
+
+
     respond_to do |format|
       if @address.save
         format.html { redirect_to @address, notice: "Address was successfully created." }

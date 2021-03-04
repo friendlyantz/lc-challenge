@@ -4,6 +4,13 @@ class PropertiesController < ApplicationController
   # GET /properties or /properties.json
   def index
     @properties = Property.all
+
+    @markers = @properties.map do |property|
+      {
+        lat: property.latitude,
+        lng: property.longitude
+      }
+    end
   end
 
   # GET /properties/1 or /properties/1.json
