@@ -15,6 +15,9 @@
 
 `rails c`
 
+###### add `require 'pry-byebug'` if you need to debug a specific file
+`binding.pry` add this to stop the code 
+
 ## server
 
 `rails s`
