@@ -1,5 +1,7 @@
 # LC coding challange
 
+https://lc-challange.herokuapp.com/
+
 ## commands to run
 `bundle install`
 
