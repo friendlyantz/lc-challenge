@@ -7,6 +7,8 @@
 
 `yarn add bootstrap jquery popper.js`
 
+`yarn add mapbox-gl`
+
 `rails db:create`
 
 `rails db:migrate`
