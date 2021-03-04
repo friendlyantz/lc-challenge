@@ -1,7 +1,34 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+require 'csv'
+require 'json'
+
+filepath_lgas = 'lc-files/lgas.csv'
+filepath_addresses = 'lc-files/addresses.csv'
+filepath_properties = 'lc-files/properties.csv'
+filepath_properties_json= 'lc-files/properties.json'
+
+# ========== lgas ==============
+puts "========== lgas =============="
+CSV.foreach(filepath_lgas) do |row|
+  puts "#{row[0]} | #{row[1]} | #{row[2]}"
+end
+# ==============================
+
+# ========= addresses ==========
+# puts "========= addresses =========="
+# CSV.foreach(filepath_addresses) do |row|
+#   puts "#{row[0]} | #{row[1]} | #{row[2]} | #{row[3]} | #{row[4]} | #{row[5]}"
+# end
+# ==============================
+
+# ======== properties ==========
+# puts "======== properties =========="
+# CSV.foreach(filepath_properties) do |row|
+#   puts "#{row[0]} | #{row[1]} | #{row[2]} | #{row[3]} | #{row[4]}"
+# end
+# ==============================
+
+# ====== properties JSON =======
+# puts "====== properties JSON ======="
+# properties_json = File.read(filepath_properties)
+# properties = JSON.parse(properties_json)
+# ==============================
