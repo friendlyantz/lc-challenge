@@ -8,24 +8,24 @@ filepath_properties = File.join(__dir__,'./lc-files/properties.csv')
 filepath_properties_json= File.join(__dir__,'./lc-files/properties.json')
 # =========================
 puts "==== purging old entries ====="
-# Lgasfile.destroy_all
-# puts "==== old entries purged! ====="
-# # ========== lgas ==============
-#   puts "========== lgas =============="
+Lgasfile.destroy_all
+puts "==== old entries purged! ====="
+# ========== lgas ==============
+  puts "========== lgas =============="
 
-#   CSV.foreach(filepath_lgas) do |row|
-#     puts "generating #{row[0]} | #{row[1]} | #{row[2]}"
-#     file = Lgasfile.new(
-#       code: row[0].to_i,
-#       name: row[1].to_s, 
-#       long_name: row[2].to_s
-#     )
+  CSV.foreach(filepath_lgas) do |row|
+    puts "generating #{row[0]} | #{row[1]} | #{row[2]}"
+    file = Lgasfile.new(
+      code: row[0].to_i,
+      name: row[1].to_s, 
+      long_name: row[2].to_s
+    )
     
-#     file.save ? (puts "#{file.name} created!") : "failed to create"
-#   end
+    file.save ? (puts "#{file.name} created!") : "failed to create"
+  end
 
-#   puts "======= lgas complete ========"
-#   puts ""
+  puts "======= lgas complete ========"
+  puts ""
 # ==============================
 
 # ======== properties ==========
