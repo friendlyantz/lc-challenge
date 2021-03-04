@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :addresses
   resources :properties
   resources :lgasfiles
   root to: 'pages#home'
