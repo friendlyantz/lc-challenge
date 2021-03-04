@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lc:</strong>
+  <%= @property.lc_id %>
+</p>
+
+<p>
+  <strong>Lga code:</strong>
+  <%= @property.lga_code_id %>
+</p>
+
+<p>
+  <strong>Council property number:</strong>
+  <%= @property.council_property_number %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @property.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @property.latitude %>
+</p>
+
+<%= link_to 'Edit', edit_property_path(@property) %> |
+<%= link_to 'Back', properties_path %>
