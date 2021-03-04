@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_04_015922) do
+ActiveRecord::Schema.define(version: 2021_03_04_030736) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer "feature_id"
+    t.bigint "property_id", null: false
+    t.string "full_address"
+    t.bigint "lgasfile_id", null: false
+    t.string "state"
+    t.integer "postcode"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["lgasfile_id"], name: "index_addresses_on_lgasfile_id"
+    t.index ["property_id"], name: "index_addresses_on_property_id"
+  end
 
   create_table "lgasfiles", force: :cascade do |t|
     t.integer "code"
@@ -34,5 +47,7 @@ ActiveRecord::Schema.define(version: 2021_03_04_015922) do
     t.index ["lgasfile_id"], name: "index_properties_on_lgasfile_id"
   end
 
+  add_foreign_key "addresses", "lgasfiles"
+  add_foreign_key "addresses", "properties"
   add_foreign_key "properties", "lgasfiles"
 end
