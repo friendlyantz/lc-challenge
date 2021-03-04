@@ -1,0 +1,2 @@
+class Lgasfile < ApplicationRecord
+end

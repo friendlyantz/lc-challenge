@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @lgasfile.code %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lgasfile.name %>
+</p>
+
+<p>
+  <strong>Long name:</strong>
+  <%= @lgasfile.long_name %>
+</p>
+
+<%= link_to 'Edit', edit_lgasfile_path(@lgasfile) %> |
+<%= link_to 'Back', lgasfiles_path %>
